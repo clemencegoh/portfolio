@@ -1,14 +1,10 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import Tictactoe from "./tic-tac-toe/TicTacToe";
+
+console.log(process.env.PUBLIC_URL);
 
 function App() {
-  return (
-    <div className="App">
-      <Tictactoe />
-    </div>
-  );
+  return <div className="App">Hello World</div>;
 }
 
 export default App;
