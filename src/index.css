@@ -1,13 +1,83 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+:root {
+  --palette-0: #f8771a;
+  --palette-0-rgb: 248, 119, 26;
+  --palette-1: #e7717d;
+  --palette-2: #c2cad0;
+  --palette-3: #c2b9b0;
+  --palette-4: #7e685a;
+  --palette-5: #afd275;
+
+  --transition-time: 300ms;
+}
+
+.theme-light {
+  --primary: #51baf8;
+
+  --bg-main: #f6f7fb;
+  --bg-card: #ffffff;
+
+  --contrast: #fbfbff;
+  --blend: #ececec;
+  --help: #d7d7d7;
+  --labels: #676767;
+
+  --text-main: #000;
+  --text-off: #2e2c2f;
+
+  --positive: #52b788;
+  --negative: #e86252;
+}
+
+.theme-dark {
+  --primary: #51baf8;
+
+  --bg-main: #202124;
+  --bg-card: #35363a;
+
+  --contrast: #1b1b1b;
+  --blend: #404040;
+  --help: #9a9a9a;
+  --labels: #606164;
+
+  --text-main: #ffffff;
+  --text-off: #f9f9f9;
+
+  --positive: #75f381;
+  --negative: #ff8d80;
+}
+
+* {
+  -webkit-transition: background-color var(--transition-time) linear,
+    color var(--transition-time) linear;
+  -moz-transition: background-color var(--transition-time) linear,
+    color var(--transition-time) linear;
+  -o-transition: background-color var(--transition-time) linear,
+    color var(--transition-time) linear;
+  -ms-transition: background-color var(--transition-time) linear,
+    color var(--transition-time) linear;
+  transition: background-color var(--transition-time) linear,
+    color var(--transition-time) linear;
+}
+
+.icon-size {
+  width: 1.5rem;
+  height: 1.5rem;
 }

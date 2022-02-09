@@ -3,12 +3,12 @@
   "name": "React Projects clemencegoh",
   "icons": [
     {
-      "src": "clams-logo.jpg",
+      "src": "clams-logo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "clams-logo.jpg",
+      "src": "clams-logo.png",
       "type": "image/png",
       "sizes": "512x512"
     }
