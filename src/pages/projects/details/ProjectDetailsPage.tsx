@@ -1,10 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { projectsData } from "data/projects";
-import { Container, Fade, Typography } from "@mui/material";
+import { Button, Card, Container, Fade, Grid, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import { css } from "@emotion/css";
 import IPhoneCase from "./IPhoneCase";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 type Props = {};
 
@@ -21,6 +22,7 @@ export default function ProjectDetailsPage({}: Props) {
           flex-flow: row;
           justify-content: space-around;
           color: var(--text-main);
+          margin-top: 2rem;
 
           @media screen and (max-width: 600px) {
             flex-flow: column-reverse;
@@ -69,7 +71,7 @@ export default function ProjectDetailsPage({}: Props) {
             align-items: center;
 
             @media screen and (max-width: 600px) {
-              margin: 1rem;
+              margin-bottom: 2rem;
             }
           `}
         >
@@ -77,15 +79,83 @@ export default function ProjectDetailsPage({}: Props) {
             {data?.name}
           </Typography>
           <Typography variant="subtitle1" textAlign="center">
-            {data?.description}
+            {data?.shortDescription}
           </Typography>
         </article>
       </section>
       <section
+        id="preview"
         className={css`
-          height: 200vh;
+          display: flex;
+          flex-flow: row;
+          justify-content: space-around;
+          color: var(--text-main);
+          margin-top: 2rem;
+
+          @media screen and (max-width: 600px) {
+            flex-flow: column;
+          }
         `}
-      ></section>
+      >
+        <Box
+          sx={{
+            marginRight: "1rem",
+            borderRadius: "1rem",
+          }}
+          width="100%"
+          height="40rem"
+          display="flex"
+          flex="1"
+          justifyContent="center"
+        >
+          {data?.tags.includes("mobile") ? (
+            <IPhoneCase>
+              <img
+                src={`${process.env.PUBLIC_URL}/images/${data?.previewSrc}`}
+                alt={`preview for ${data?.name}`}
+                className={css`
+                  object-fit: cover;
+                  width: 100%;
+                  height: 100%;
+                `}
+              />
+            </IPhoneCase>
+          ) : (
+            <img
+              src={`${process.env.PUBLIC_URL}/images/${data?.previewSrc}`}
+              alt={`preview for ${data?.name}`}
+              className={css`
+                object-fit: contain;
+              `}
+            />
+          )}
+        </Box>
+
+        <article
+          className={css`
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+          `}
+        >
+          <Typography>{data?.description}</Typography>
+          <Typography>Completion Date</Typography>
+          <Typography>{data?.completionDate ?? "Work in progress"}</Typography>
+          <Typography>Tech Stack</Typography>
+          <Typography>{data?.tags.join(", ")}</Typography>
+          <Button endIcon={<ChevronRightIcon />}>Check it out</Button>
+        </article>
+      </section>
+      <section id="other-images">
+        <Grid>
+          {data?.otherSrc.map((item, index) => (
+            <img
+              alt={`sample ${index}`}
+              src={`${process.env.PUBLIC_URL}/images/${item}`}
+            />
+          ))}
+        </Grid>
+      </section>
     </Container>
   );
 }
