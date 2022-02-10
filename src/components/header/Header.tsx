@@ -20,6 +20,7 @@ import ArticleIcon from "@mui/icons-material/Article";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import ModeNightIcon from "@mui/icons-material/ModeNight";
 import { Box } from "@mui/system";
+import { ThemedIconButton } from "components/ThemedComponents";
 
 type Props = {
   theme: "theme-light" | "theme-dark";
@@ -97,14 +98,14 @@ export default function Header({ theme, toggleTheme }: Props) {
             </Button>
           </li>
           <li>
-            <CustomIconButton onClick={toggleTheme}>
+            <ThemedIconButton onClick={toggleTheme}>
               {theme === "theme-light" ? <LightModeIcon /> : <ModeNightIcon />}
-            </CustomIconButton>
+            </ThemedIconButton>
           </li>
           <li className={`${mobileOnlyStyle} mobile-only`}>
-            <CustomIconButton onClick={toggleModal}>
+            <ThemedIconButton onClick={toggleModal}>
               {menuIcon}
-            </CustomIconButton>
+            </ThemedIconButton>
           </li>
         </ul>
       </nav>
@@ -124,7 +125,7 @@ export default function Header({ theme, toggleTheme }: Props) {
             },
           }}
         >
-          <Box sx={{ width: "80vw" }} role="presentation">
+          <Box sx={{ width: "80vw", padding: "2rem 1rem" }} role="presentation">
             <List
               className={css`
                 a {
@@ -251,8 +252,4 @@ const CustomFab = styled(Fab)`
     right: 0;
     transform: translate(-30%, -30%);
   }
-`;
-
-const CustomIconButton = styled(IconButton)`
-  color: var(--text-main);
 `;

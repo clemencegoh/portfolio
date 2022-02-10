@@ -1,9 +1,10 @@
 import { css } from "@emotion/css";
+import Footer from "components/footer/Footer";
 import AboutPage from "pages/AboutPage";
 import LandingPage from "pages/LandingPage";
 import PortfolioPage from "pages/PortfolioPage";
 import React from "react";
-import { Routes, Route, Outlet, useLocation } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
 
 import Placeholder from "./components/common/placeholder/Placeholder";
 import Header from "./components/header/Header";
@@ -13,7 +14,6 @@ import Header from "./components/header/Header";
 // `;
 
 function Wrapper() {
-  const location = useLocation();
   const [theme, setTheme] = React.useState<"theme-light" | "theme-dark">(
     "theme-light"
   );
@@ -32,6 +32,7 @@ function Wrapper() {
 
       <Placeholder />
       <Placeholder />
+      <Footer />
     </div>
   );
 }
