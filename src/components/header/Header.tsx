@@ -192,6 +192,7 @@ const topnavStyle = css`
   justify-content: space-between;
   padding: 1rem 1rem;
   background-color: var(--bg-main);
+  z-index: 1;
 `;
 
 const navItemStyle = css`
@@ -232,5 +233,6 @@ const CustomFab = styled(Fab)`
     bottom: 0;
     right: 0;
     transform: translate(-30%, -30%);
+    z-index: 1;
   }
 `;

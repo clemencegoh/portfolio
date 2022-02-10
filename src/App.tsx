@@ -8,6 +8,7 @@ import { Routes, Route, Outlet } from "react-router-dom";
 import "./stars.css";
 
 import Header from "./components/header/Header";
+import ProjectDetailsPage from "pages/projects/details/ProjectDetailsPage";
 
 // const StyledButton = styled(Button)`
 //   background-color: var(--palette-1);
@@ -15,7 +16,7 @@ import Header from "./components/header/Header";
 
 function Wrapper() {
   const [theme, setTheme] = React.useState<"theme-light" | "theme-dark">(
-    "theme-light"
+    "theme-dark"
   );
   const toggleTheme = () => {
     if (theme === "theme-light") {
@@ -28,6 +29,8 @@ function Wrapper() {
   return (
     <div className={`${wrapperStyle} ${theme} App`}>
       <Header theme={theme} toggleTheme={toggleTheme} />
+
+      <Outlet />
 
       <div
         id="stars"
@@ -45,8 +48,6 @@ function Wrapper() {
         hidden={theme === "theme-light"}
       ></div>
 
-      <Outlet />
-
       <Footer />
     </div>
   );
@@ -57,7 +58,9 @@ function App() {
     <Routes>
       <Route path="/portfolio" element={<Wrapper />}>
         <Route index element={<LandingPage />} />
-        <Route path="projects" element={<ProjectsPage />} />
+        <Route path="projects" element={<ProjectsPage />}>
+          <Route path=":name" element={<ProjectDetailsPage />} />
+        </Route>
         <Route path="about" element={<AboutPage />} />
       </Route>
     </Routes>
