@@ -44,6 +44,8 @@ code {
 
   --positive: #52b788;
   --negative: #e86252;
+
+  --backlights: #f6f7fb;
 }
 
 .theme-dark {
@@ -62,6 +64,9 @@ code {
 
   --positive: #75f381;
   --negative: #ff8d80;
+
+  /* for stars bg only */
+  --backlights: #1b2735;
 }
 
 * {
@@ -77,9 +82,21 @@ code {
     color var(--transition-time) linear;
 }
 
-.icon-size {
-  width: 1.5rem;
-  height: 1.5rem;
+.App {
+  background: radial-gradient(
+    ellipse at bottom,
+    var(--backlights) 0%,
+    var(--bg-main) 100%
+  );
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
 }
 
 @media screen and (max-width: 600px) {

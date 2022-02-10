@@ -1,12 +1,12 @@
 import { css } from "@emotion/css";
 import Footer from "components/footer/Footer";
-import AboutPage from "pages/AboutPage";
-import LandingPage from "pages/LandingPage";
-import PortfolioPage from "pages/PortfolioPage";
+import AboutPage from "pages/about/AboutPage";
+import LandingPage from "pages/landing/LandingPage";
+import ProjectsPage from "pages/projects/ProjectsPage";
 import React from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
+import "./stars.css";
 
-import Placeholder from "./components/common/placeholder/Placeholder";
 import Header from "./components/header/Header";
 
 // const StyledButton = styled(Button)`
@@ -26,12 +26,27 @@ function Wrapper() {
   };
 
   return (
-    <div className={`${wrapperStyle} ${theme}`}>
+    <div className={`${wrapperStyle} ${theme} App`}>
       <Header theme={theme} toggleTheme={toggleTheme} />
+
+      <div
+        id="stars"
+        className={restrict}
+        hidden={theme === "theme-light"}
+      ></div>
+      <div
+        id="stars2"
+        className={restrict}
+        hidden={theme === "theme-light"}
+      ></div>
+      <div
+        id="stars3"
+        className={restrict}
+        hidden={theme === "theme-light"}
+      ></div>
+
       <Outlet />
 
-      <Placeholder />
-      <Placeholder />
       <Footer />
     </div>
   );
@@ -42,7 +57,7 @@ function App() {
     <Routes>
       <Route path="/portfolio" element={<Wrapper />}>
         <Route index element={<LandingPage />} />
-        <Route path="projects" element={<PortfolioPage />} />
+        <Route path="projects" element={<ProjectsPage />} />
         <Route path="about" element={<AboutPage />} />
       </Route>
     </Routes>
@@ -50,5 +65,8 @@ function App() {
 }
 
 const wrapperStyle = css``;
+const restrict = css`
+  overflow: hidden;
+`;
 
 export default App;
