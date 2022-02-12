@@ -30,45 +30,50 @@ export const projectsData: projectData[] = [
     link: "https://drive.google.com/drive/folders/1jzt3V-25clzJxqFInngAlKl9sOM0YLxy?usp=sharing",
   },
   {
-    name: "Invento2",
-    innerName: "flutter-invento2",
-    shortDescription: "Inventory management mobile app created using flutter",
+    name: "Minesweeper",
+    innerName: "minesweeper-game",
+    shortDescription: "Game created using pure html/css/js",
     description:
-      "Mobile app created with flutter as part of my attempt to learn flutter as a framework. UI design is done by my (now) wife.",
+      "Created using vanilla html/css/js as part of an attempt to use reactJS with vanilla web stack, mostly as a POC so there's not much styling involved.",
     completionDate: "2020",
-    teaserSrc: "invento_preview.jpg",
-    previewSrc: "invento_preview.jpg",
+    teaserSrc: "minesweeper_preview.jpg",
+    previewSrc: "minesweeper_preview.jpg",
     otherSrc: [],
-    tags: ["desktop", "mobile", "software"],
-    link: "https://drive.google.com/drive/folders/1jzt3V-25clzJxqFInngAlKl9sOM0YLxy?usp=sharing",
+    tags: ["games", "web"],
+    link: "https://clemencegoh.github.io/games/minesweeper",
+  },
+  {
+    name: "Flight Insurance DApp",
+    innerName: "flight-insurance-dapp",
+    shortDescription:
+      "Decentralized application (web3) for flight insurance in SUTD.",
+    description:
+      "DApp proof of concept developed during my time at SUTD. This was back when I thought " +
+      "that flask (with python) was the only way to serve files and build a server.",
+    completionDate: "2018",
+    teaserSrc: "simple_dapp.JPG",
+    previewSrc: "simple_dapp.JPG",
+    otherSrc: [],
+    tags: ["web3", "web", "python"],
+    link: "https://github.com/clemencegoh/SUTD_Blockchain_50.037/tree/master/dapp",
+  },
+  {
+    name: "Whack a mole",
+    innerName: "whack-a-mole-mojo",
+    shortDescription: "Whack-a-mole game for mojo FPGA using Lucid",
+    description:
+      "Low level software component for an arcade game (whack a mole), which was built and " +
+      "graded during my time in SUTD, complete with a counter.",
+    completionDate: "2017",
+    teaserSrc: "coding_no_preview.jpg",
+    previewSrc: "coding_no_preview.jpg",
+    otherSrc: [],
+    tags: ["hardware", "games", "lucid"],
+    link: "https://github.com/clemencegoh/MojoLucidWAM",
   },
 ];
 
 // export const projectsData: projectData[] = [
-//   {
-//     description: "Invento - inventory management mobile app",
-//     tags: ["software"],
-//     link: "https://drive.google.com/drive/folders/1jzt3V-25clzJxqFInngAlKl9sOM0YLxy?usp=sharing",
-//     src: "invento_preview.jpg",
-//     name: "Invento",
-//     innerName: "flutter-invento",
-//   },
-//   {
-//     description: "Minesweeper game",
-//     tags: ["website"],
-//     link: "https://clemencegoh.github.io/games/minesweeper",
-//     src: "minesweeper_preview.jpg",
-//     name: "Minesweeper game",
-//     innerName: "minesweeper-game",
-//   },
-//   {
-//     description: "Flight Insurance Ethereum Dapp",
-//     tags: ["website", "school"],
-//     link: "https://github.com/clemencegoh/SUTD_Blockchain_50.037/tree/master/dapp",
-//     src: "/img/simple_dapp.JPG",
-//     name: "Ethereum Blockchain Dapp",
-//     innerName: "flight-insurance-dapp",
-//   },
 //   {
 //     description: "Whack-a-mole game for mojo FPGA",
 //     tags: ["school", "software"],

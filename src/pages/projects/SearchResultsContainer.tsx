@@ -32,15 +32,24 @@ export default function SearchResultsContainer({ data }: Props) {
     >
       {data.map((item) => (
         <Card
-          sx={{ margin: "auto", backgroundColor: "var(--bg-card)" }}
+          sx={{
+            margin: "auto",
+            width: "100%",
+            height: "100%",
+            backgroundColor: "var(--bg-card)",
+          }}
           key={`item-key-${item.innerName}`}
         >
           <CardActionArea>
             <ThemedLink to={`${item.innerName}`}>
               <CardMedia
                 component="img"
-                height="180"
-                sx={{ objectFit: "contain", padding: "1rem 0" }}
+                height="200"
+                sx={{
+                  objectFit: "contain",
+                  padding: "1rem",
+                  width: "-webkit-fill-available",
+                }}
                 image={getImageURL(item.teaserSrc)}
                 alt={`teaser image for ${item.name}`}
               />

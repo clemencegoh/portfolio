@@ -1,18 +1,16 @@
-import { css } from "@emotion/css";
-import React from "react";
+import { Container } from "@mui/material";
 
 type Props = {};
 
 export default function AboutPage({}: Props) {
   return (
-    <div
-      className={css`
-        height: 20vh;
-        background-color: pink;
-        color: white;
-      `}
-    >
-      About page
-    </div>
+    <Container sx={{ minHeight: "80vh" }}>
+      <article>Something here about me</article>
+      <article>Something here about my achievements</article>
+      <article>Something here about my hobbies & interests</article>
+      <article>
+        Stuff here about checking my most interesting project out
+      </article>
+    </Container>
   );
 }

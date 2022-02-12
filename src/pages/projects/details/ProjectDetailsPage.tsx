@@ -20,19 +20,24 @@ export default function ProjectDetailsPage({}: Props) {
     return <></>;
   }
 
+  const isMobileProject = data?.tags.includes("mobile");
+  const smoothScrollUp = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <Container>
       <section
         id="teaser"
         className={css`
-          display: flex;
-          flex-flow: row;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
           justify-content: space-around;
           color: var(--text-main);
-          margin-top: 2rem;
+          ${isMobileProject && "margin-top: 2rem;"}
 
           @media screen and (max-width: 600px) {
-            flex-flow: column-reverse;
+            grid-template-columns: 1fr;
           }
         `}
       >
@@ -41,13 +46,11 @@ export default function ProjectDetailsPage({}: Props) {
             marginRight: "1rem",
             borderRadius: "1rem",
           }}
-          width="100%"
           height="40rem"
           display="flex"
-          flex="1"
           justifyContent="center"
         >
-          {data?.tags.includes("mobile") ? (
+          {isMobileProject ? (
             <IPhoneCase>
               <img
                 src={`${process.env.PUBLIC_URL}/images/${data?.teaserSrc}`}
@@ -65,17 +68,18 @@ export default function ProjectDetailsPage({}: Props) {
               alt={`teaser for ${data?.name}`}
               className={css`
                 object-fit: contain;
+                max-width: 100%;
               `}
             />
           )}
         </Box>
         <article
           className={css`
-            flex: 1;
             display: flex;
             flex-flow: column;
             justify-content: center;
             align-items: center;
+            text-align: center;
 
             @media screen and (max-width: 600px) {
               margin-bottom: 2rem;
@@ -90,17 +94,17 @@ export default function ProjectDetailsPage({}: Props) {
           </Typography>
         </article>
       </section>
+
       <section
         id="preview"
         className={css`
-          display: flex;
-          flex-flow: row;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
           justify-content: space-around;
           color: var(--text-main);
-          margin: 2rem 0;
+          ${isMobileProject && "margin-top: 2rem;"}
 
           @media screen and (max-width: 600px) {
-            flex-flow: column;
           }
         `}
       >
@@ -109,13 +113,12 @@ export default function ProjectDetailsPage({}: Props) {
             marginRight: "1rem",
             borderRadius: "1rem",
           }}
-          width="100%"
           height="40rem"
           display="flex"
           flex="1"
           justifyContent="center"
         >
-          {data?.tags.includes("mobile") ? (
+          {isMobileProject ? (
             <IPhoneCase>
               <img
                 src={`${process.env.PUBLIC_URL}/images/${data?.previewSrc}`}
@@ -133,6 +136,7 @@ export default function ProjectDetailsPage({}: Props) {
               alt={`preview for ${data?.name}`}
               className={css`
                 object-fit: contain;
+                max-width: 100%;
               `}
             />
           )}
@@ -140,8 +144,8 @@ export default function ProjectDetailsPage({}: Props) {
 
         <article
           className={css`
-            flex: 1;
-            padding-top: 3rem;
+            width: 80%;
+            margin: auto;
           `}
         >
           <Typography variant="body1" paragraph>
@@ -199,7 +203,11 @@ export default function ProjectDetailsPage({}: Props) {
           `}
         >
           {dataIndex - 1 > -1 ? (
-            <Button variant="text" sx={{ textTransform: "none" }}>
+            <Button
+              variant="text"
+              sx={{ textTransform: "none" }}
+              onClick={smoothScrollUp}
+            >
               <ThemedLink
                 to={`/portfolio/projects/${
                   projectsData[dataIndex - 1].innerName
@@ -259,7 +267,11 @@ export default function ProjectDetailsPage({}: Props) {
           `}
         >
           {dataIndex + 1 < projectsData.length ? (
-            <Button variant="text" sx={{ textTransform: "none" }}>
+            <Button
+              variant="text"
+              sx={{ textTransform: "none" }}
+              onClick={smoothScrollUp}
+            >
               <ThemedLink
                 to={`/portfolio/projects/${
                   projectsData[dataIndex + 1].innerName
