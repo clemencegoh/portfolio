@@ -90,6 +90,16 @@ code {
     var(--origin-lights) 0%,
     var(--sky-lights) 100%
   );
+  min-height: 100vh;
+}
+
+#wandering-thoughts {
+  position: sticky;
+  bottom: 0;
+  right: 0;
+  width: 20%;
+  margin-top: 1rem;
+  transform: scaleX(-1) translate(10%, 5%);
 }
 
 @keyframes animStar {

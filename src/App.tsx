@@ -33,19 +33,22 @@ function Wrapper() {
 
       <Outlet />
 
-      <div
-        id={theme === "theme-light" ? "snow" : "stars"}
-        className={restrict}
-      ></div>
-      <div
-        id={theme === "theme-light" ? "snow2" : "stars2"}
-        className={restrict}
-      ></div>
-      <div
-        id={theme === "theme-light" ? "snow3" : "stars3"}
-        className={restrict}
-      ></div>
+      <div hidden={theme === "theme-dark"}>
+        <div id={"snow"} className={restrict}></div>
+        <div id={"snow2"} className={restrict}></div>
+        <div id={"snow3"} className={restrict}></div>
+      </div>
+      <div hidden={theme === "theme-light"}>
+        <div id={"stars"} className={restrict}></div>
+        <div id={"stars2"} className={restrict}></div>
+        <div id={"stars3"} className={restrict}></div>
+      </div>
 
+      <img
+        id="wandering-thoughts"
+        alt="boy-wandering-thoughts"
+        src={`${process.env.PUBLIC_URL}/images/boy-staring-up.png`}
+      />
       <Footer />
     </div>
   );

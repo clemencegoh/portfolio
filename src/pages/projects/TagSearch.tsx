@@ -1,34 +1,46 @@
 import { css } from "@emotion/css";
-import { Chip, Grid, Paper } from "@mui/material";
+import { Chip } from "@mui/material";
 import { BaseComponentProps } from "components/BaseComponent";
-import React from "react";
+import { useState } from "react";
+import { Set } from "immutable";
 
 type Props = {
   tags: Set<string>;
-  selectedTags: Set<string>;
-  toggleTag: (tagName: string) => void;
+  onChangeSelected?: (selected: Set<string>) => void;
 } & BaseComponentProps;
 
-export default function TagSearch({ tags, selectedTags, toggleTag }: Props) {
-  console.log(tags, selectedTags);
+export default function TagSearch({ tags, onChangeSelected }: Props) {
+  const [selectedTags, setSelectedTags] = useState<Set<string>>(Set());
+  const toggleTag = (tagName: string) => {
+    let newSet;
+    if (selectedTags.has(tagName)) {
+      newSet = selectedTags.delete(tagName);
+    } else {
+      newSet = selectedTags.add(tagName);
+    }
+    setSelectedTags(newSet);
+    onChangeSelected && onChangeSelected(newSet);
+  };
+
   return (
     <div
       className={css`
         display: flex;
+        flex-wrap: wrap;
         width: 88%;
         margin: 0 auto 1rem;
-        color: var(--text-main);
       `}
     >
       {Array.from(tags.keys()).map((tag) => (
         <Chip
-          sx={{ margin: "0 0.2rem" }}
+          sx={{ margin: "0 0.5rem 0.5rem 0", fontSize: "medium" }}
           label={tag}
-          color={selectedTags.has(tag) ? "success" : "default"}
+          color={selectedTags.has(tag) ? "info" : "primary"}
           component="button"
-          variant="outlined"
+          variant={selectedTags.has(tag) ? "filled" : "outlined"}
           clickable
           onClick={() => toggleTag(tag)}
+          key={`tag-key-${tag}`}
         />
       ))}
     </div>

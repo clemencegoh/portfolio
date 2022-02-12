@@ -1,45 +1,54 @@
-import { css } from "@emotion/css";
 import { Outlet, useParams } from "react-router-dom";
-import { projectsData } from "data/projects";
+import { projectData, projectsData } from "data/projects";
 import Searchbar from "./Searchbar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Container } from "@mui/material";
 import TagSearch from "./TagSearch";
+import { Set } from "immutable";
+import SearchResultsContainer from "./SearchResultsContainer";
+import { isTruthy } from "helpers/truthy";
+import { containsAll } from "helpers/arrayOverlap";
 
 type Props = {};
 
 export default function ProjectsPage({}: Props) {
   const { name } = useParams();
+  const [data, setData] = useState<projectData[]>(projectsData);
 
-  const tags: Set<string> = new Set();
+  const [tagFilter, setTagFilter] = useState<string[]>([]);
+  const [nameFilter, setNameFilter] = useState<string>("");
+
+  let tags: Set<string> = Set();
   projectsData.forEach((item) => {
-    item.tags.forEach(tags.add, tags);
+    item.tags.forEach((tag) => {
+      tags = tags.add(tag);
+    });
   });
 
-  const [selectedTags, setSelectedTags] = useState<Set<string>>(new Set());
-
-  const toggleTag = (tagName: string) => {
-    if (selectedTags.has(tagName)) {
-      selectedTags.delete(tagName);
-      setSelectedTags(selectedTags);
-    } else {
-      selectedTags.add(tagName);
+  useEffect(() => {
+    let filteredData = projectsData;
+    if (isTruthy(nameFilter)) {
+      filteredData = filteredData.filter((item) =>
+        item.name.toLowerCase().includes(nameFilter.toLowerCase())
+      );
     }
-  };
+    if (isTruthy(tagFilter)) {
+      filteredData = filteredData.filter((item) =>
+        containsAll(item.tags, tagFilter)
+      );
+    }
+    setData(filteredData);
+  }, [tagFilter, nameFilter]);
 
-  const showMe = (val: string) => {
-    console.log(val);
+  const tagFilters = (selected: Set<string>) => {
+    setTagFilter(selected.toArray());
   };
 
   const ProjectsSummary = (
-    <Container>
-      <Searchbar onDebouncedChange={showMe} />
-      <TagSearch
-        tags={tags}
-        selectedTags={selectedTags}
-        toggleTag={toggleTag}
-      />
-      Summary for projects
+    <Container sx={{ minHeight: "80vh" }}>
+      <Searchbar onDebouncedChange={setNameFilter} />
+      <TagSearch tags={tags} onChangeSelected={tagFilters} />
+      <SearchResultsContainer data={data} />
     </Container>
   );
 
