@@ -6,6 +6,7 @@ import ProjectsPage from "pages/projects/ProjectsPage";
 import React from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
 import "./stars.css";
+import "./snow.css";
 
 import Header from "./components/header/Header";
 import ProjectDetailsPage from "pages/projects/details/ProjectDetailsPage";
@@ -16,7 +17,7 @@ import ProjectDetailsPage from "pages/projects/details/ProjectDetailsPage";
 
 function Wrapper() {
   const [theme, setTheme] = React.useState<"theme-light" | "theme-dark">(
-    "theme-dark"
+    "theme-light"
   );
   const toggleTheme = () => {
     if (theme === "theme-light") {
@@ -33,19 +34,16 @@ function Wrapper() {
       <Outlet />
 
       <div
-        id="stars"
+        id={theme === "theme-light" ? "snow" : "stars"}
         className={restrict}
-        hidden={theme === "theme-light"}
       ></div>
       <div
-        id="stars2"
+        id={theme === "theme-light" ? "snow2" : "stars2"}
         className={restrict}
-        hidden={theme === "theme-light"}
       ></div>
       <div
-        id="stars3"
+        id={theme === "theme-light" ? "snow3" : "stars3"}
         className={restrict}
-        hidden={theme === "theme-light"}
       ></div>
 
       <Footer />

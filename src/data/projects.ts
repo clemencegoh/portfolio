@@ -29,6 +29,19 @@ export const projectsData: projectData[] = [
     tags: ["flutter", "android", "mobile"],
     link: "https://drive.google.com/drive/folders/1jzt3V-25clzJxqFInngAlKl9sOM0YLxy?usp=sharing",
   },
+  {
+    name: "Invento2",
+    innerName: "flutter-invento2",
+    shortDescription: "Inventory management mobile app created using flutter",
+    description:
+      "Mobile app created with flutter as part of my attempt to learn flutter as a framework. UI design is done by my (now) wife.",
+    completionDate: "2020",
+    teaserSrc: "invento_preview.jpg",
+    previewSrc: "invento_preview.jpg",
+    otherSrc: [],
+    tags: ["desktop", "mobile", "software"],
+    link: "https://drive.google.com/drive/folders/1jzt3V-25clzJxqFInngAlKl9sOM0YLxy?usp=sharing",
+  },
 ];
 
 // export const projectsData: projectData[] = [

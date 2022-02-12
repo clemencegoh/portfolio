@@ -45,7 +45,8 @@ code {
   --positive: #52b788;
   --negative: #e86252;
 
-  --backlights: #f6f7fb;
+  --sky-lights: #9adef3e3;
+  --origin-lights: #ffffff;
 }
 
 .theme-dark {
@@ -66,7 +67,8 @@ code {
   --negative: #ff8d80;
 
   /* for stars bg only */
-  --backlights: #1b2735;
+  --sky-lights: #202124;
+  --origin-lights: #1b2735;
 }
 
 * {
@@ -82,16 +84,12 @@ code {
     color var(--transition-time) linear;
 }
 
-.App.theme-dark {
+.App {
   background: radial-gradient(
     ellipse at bottom,
-    var(--backlights) 0%,
-    var(--bg-main) 100%
+    var(--origin-lights) 0%,
+    var(--sky-lights) 100%
   );
-}
-
-.App.theme-light {
-  background: var(--bg-main);
 }
 
 @keyframes animStar {
@@ -100,6 +98,15 @@ code {
   }
   to {
     transform: translateY(-2000px);
+  }
+}
+
+@keyframes animSnow {
+  from {
+    transform: translateY(-2000px);
+  }
+  to {
+    transform: translateY(0);
   }
 }
 

@@ -1,16 +1,6 @@
-import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { projectsData } from "data/projects";
-import {
-  Button,
-  Card,
-  CardActionArea,
-  CardContent,
-  Container,
-  Fade,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Button, Container, Grid, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import { css } from "@emotion/css";
 import IPhoneCase from "./IPhoneCase";
