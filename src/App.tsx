@@ -16,8 +16,9 @@ import ProjectDetailsPage from "pages/projects/details/ProjectDetailsPage";
 // `;
 
 function Wrapper() {
+  // todo: set default based off user time of day
   const [theme, setTheme] = React.useState<"theme-light" | "theme-dark">(
-    "theme-light"
+    "theme-dark"
   );
   const toggleTheme = () => {
     if (theme === "theme-light") {
@@ -44,11 +45,13 @@ function Wrapper() {
         <div id={"stars3"} className={restrict}></div>
       </div>
 
-      <img
-        id="wandering-thoughts"
-        alt="boy-wandering-thoughts"
-        src={`${process.env.PUBLIC_URL}/images/boy-staring-up.png`}
-      />
+      {theme === "theme-dark" && (
+        <img
+          id="wandering-thoughts"
+          alt="boy-wandering-thoughts"
+          src={`${process.env.PUBLIC_URL}/images/boy-staring-up.png`}
+        />
+      )}
       <Footer />
     </div>
   );

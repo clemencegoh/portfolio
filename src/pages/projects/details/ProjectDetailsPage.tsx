@@ -151,13 +151,13 @@ export default function ProjectDetailsPage({}: Props) {
           <Typography variant="body1" paragraph>
             {data?.description}
           </Typography>
-          <Typography variant="h6" sx={{ textTransform: "uppercase" }}>
+          <Typography variant="h6" textTransform="uppercase">
             Completion Date
           </Typography>
           <Typography paragraph>
             {data?.completionDate ?? "Work in progress"}
           </Typography>
-          <Typography variant="h6" sx={{ textTransform: "uppercase" }}>
+          <Typography variant="h6" textTransform="uppercase">
             Tech Stack
           </Typography>
           <Typography paragraph>{data?.tags.join(", ")}</Typography>
@@ -223,10 +223,10 @@ export default function ProjectDetailsPage({}: Props) {
                   <ChevronLeftIcon sx={{ marginRight: "1rem" }} />
                   <div>
                     <Typography
-                      sx={{ marginBottom: "-0.5rem" }}
                       gutterBottom
                       variant="overline"
                       component="div"
+                      marginBottom="-0.5rem"
                     >
                       PREVIOUS PROJECT
                     </Typography>
@@ -286,10 +286,10 @@ export default function ProjectDetailsPage({}: Props) {
                 >
                   <div>
                     <Typography
-                      sx={{ marginBottom: "-0.5rem" }}
                       gutterBottom
                       variant="overline"
                       component="div"
+                      marginBottom="-0.5rem"
                     >
                       NEXT PROJECT
                     </Typography>

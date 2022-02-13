@@ -20,7 +20,7 @@ export default function SearchResultsContainer({ data }: Props) {
     <div
       className={css`
         display: grid;
-        grid-gap: 0.5rem;
+        grid-gap: 1rem;
         width: 88%;
         grid-template-columns: 1fr 1fr 1fr;
         margin: auto;

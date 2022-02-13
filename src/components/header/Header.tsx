@@ -40,9 +40,7 @@ export default function Header({ theme, toggleTheme }: Props) {
               <Typography
                 variant="button"
                 component="a"
-                className={css`
-                  color: var(--text-main);
-                `}
+                color="var(--text-main)"
               >
                 ABOUT
               </Typography>
@@ -53,9 +51,7 @@ export default function Header({ theme, toggleTheme }: Props) {
               <Typography
                 variant="button"
                 component="a"
-                className={css`
-                  color: var(--text-main);
-                `}
+                color="var(--text-main)"
               >
                 PROJECTS
               </Typography>
@@ -121,9 +117,7 @@ export default function Header({ theme, toggleTheme }: Props) {
                   <Typography
                     variant="button"
                     component="a"
-                    className={css`
-                      color: var(--text-main);
-                    `}
+                    color="var(--text-main)"
                   >
                     ABOUT
                   </Typography>
@@ -134,9 +128,7 @@ export default function Header({ theme, toggleTheme }: Props) {
                   <Typography
                     variant="button"
                     component="a"
-                    className={css`
-                      color: var(--text-main);
-                    `}
+                    color="var(--text-main)"
                   >
                     PROJECTS
                   </Typography>

@@ -1,6 +1,8 @@
 import React from "react";
 import { css } from "@emotion/css";
 import { Link } from "react-router-dom";
+import { Avatar } from "@mui/material";
+import { getImageURL } from "helpers/getImageURL";
 
 export default function Logo() {
   return (
@@ -11,7 +13,27 @@ export default function Logo() {
         `}
         to="/portfolio"
       >
-        <span className={logoStyle}>CG</span>
+        {/* <span className={logoStyle}>CG</span> */}
+        <Avatar
+          alt="Clemence Goh"
+          src={getImageURL("closeup_me.jpg")}
+          sx={{
+            padding: "0.25rem",
+            borderRadius: "50%",
+            marginLeft: "1rem",
+
+            ":hover": {
+              boxShadow: "0 0 0 0 rgba(var(--palette-0-rgb), 0.1)",
+              transform: "scale(1)",
+              animation: "pulse 2s infinite",
+            },
+
+            "> img": {
+              width: "125%",
+              height: "125%",
+            },
+          }}
+        ></Avatar>
       </Link>
     </div>
   );
@@ -39,22 +61,5 @@ const logoStyle = css`
     box-shadow: 0 0 0 0 rgba(var(--palette-0-rgb), 0.1);
     transform: scale(1);
     animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0% {
-      transform: scale(0.95);
-      box-shadow: 0 0 0 0 rgba(var(--palette-0-rgb), 0.7);
-    }
-
-    70% {
-      transform: scale(1);
-      box-shadow: 0 0 0 10px rgba(var(--palette-0-rgb), 0);
-    }
-
-    100% {
-      transform: scale(0.95);
-      box-shadow: 0 0 0 0 rgba(var(--palette-0-rgb), 0);
-    }
   }
 `;

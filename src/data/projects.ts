@@ -65,8 +65,8 @@ export const projectsData: projectData[] = [
       "Low level software component for an arcade game (whack a mole), which was built and " +
       "graded during my time in SUTD, complete with a counter.",
     completionDate: "2017",
-    teaserSrc: "coding_no_preview.jpg",
-    previewSrc: "coding_no_preview.jpg",
+    teaserSrc: "wam-full-preview.jpg",
+    previewSrc: "wam-full-preview.jpg",
     otherSrc: [],
     tags: ["hardware", "games", "lucid"],
     link: "https://github.com/clemencegoh/MojoLucidWAM",

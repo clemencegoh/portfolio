@@ -24,6 +24,7 @@ code {
   --palette-3: #c2b9b0;
   --palette-4: #7e685a;
   --palette-5: #afd275;
+  --primary-rgb: 81, 186, 248;
 
   --transition-time: 300ms;
 }
@@ -100,6 +101,23 @@ code {
   width: 20%;
   margin-top: 1rem;
   transform: scaleX(-1) translate(10%, 5%);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(var(--primary-rgb), 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0);
+  }
 }
 
 @keyframes animStar {
