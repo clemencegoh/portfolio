@@ -13,11 +13,10 @@ export default function AboutPage({}: Props) {
         <Typography variant="overline" gutterBottom>
           MY INTERESTS AND HOBBIES
         </Typography>
+
+        <Typography variant="h5">I'd like to think of myself as a:</Typography>
         <Typography variant="h3" component="h1">
-          Software engineer &
-        </Typography>
-        <Typography variant="h3" gutterBottom>
-          innovation enthusiast
+          Developer | Climber | Innovator
         </Typography>
       </section>
       <section
