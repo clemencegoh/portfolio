@@ -1,6 +1,9 @@
 :root {
   --spread: 2px;
   --blur: 4px;
+  --animation-time-1: 150s;
+  --animation-time-2: 200s;
+  --animation-time-3: 300s;
 }
 
 #snow {
@@ -707,7 +710,7 @@
     431px 334px var(--blur) var(--spread) #fff,
     897px 15px var(--blur) var(--spread) #fff,
     705px 146px var(--blur) var(--spread) #fff;
-  animation: animSnow 50s linear infinite;
+  animation: animSnow var(--animation-time-1) linear infinite;
 }
 #snow:after {
   content: " ";
@@ -1622,7 +1625,7 @@
     1060px 444px var(--blur) var(--spread) #fff,
     323px 1676px var(--blur) var(--spread) #fff,
     1593px 1616px var(--blur) var(--spread) #fff;
-  animation: animSnow 100s linear infinite;
+  animation: animSnow var(--animation-time-2) linear infinite;
 }
 #snow2:after {
   content: " ";
@@ -1937,7 +1940,7 @@
     1193px 1421px var(--blur) var(--spread) #fff,
     564px 455px var(--blur) var(--spread) #fff,
     1675px 589px var(--blur) var(--spread) #fff;
-  animation: animSnow 150s linear infinite;
+  animation: animSnow var(--animation-time-3) linear infinite;
 }
 #snow3:after {
   content: " ";

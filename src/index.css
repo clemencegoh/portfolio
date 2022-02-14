@@ -125,13 +125,13 @@ code {
     transform: translateY(0px);
   }
   to {
-    transform: translateY(-2000px);
+    transform: translateY(-3000px);
   }
 }
 
 @keyframes animSnow {
   from {
-    transform: translateY(-2000px);
+    transform: translateY(-8000px);
   }
   to {
     transform: translateY(0);
