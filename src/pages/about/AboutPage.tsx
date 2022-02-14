@@ -1,5 +1,6 @@
 import { css } from "@emotion/css";
 import { Container, Typography } from "@mui/material";
+import NavigateButton from "components/navigation/NavigateButton";
 
 type Props = {};
 
@@ -10,10 +11,10 @@ export default function AboutPage({}: Props) {
     >
       <section className={css``}>
         <Typography variant="overline" gutterBottom>
-          ABOUT ME
+          MY INTERESTS AND HOBBIES
         </Typography>
         <Typography variant="h3" component="h1">
-          Software engineer,
+          Software engineer &
         </Typography>
         <Typography variant="h3" gutterBottom>
           innovation enthusiast
@@ -30,8 +31,12 @@ export default function AboutPage({}: Props) {
         </Typography>
       </section>
       <section>Something here about my hobbies & interests</section>
-      <section>
-        Stuff here about checking my most interesting project out
+      <section id="navigate-to-projects">
+        <NavigateButton
+          link="/portfolio/projects"
+          overText="Look deeper 👀"
+          underText="See my projects"
+        />
       </section>
     </Container>
   );
