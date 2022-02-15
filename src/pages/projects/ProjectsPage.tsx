@@ -44,13 +44,13 @@ export default function ProjectsPage({}: Props) {
     setTagFilter(selected.toArray());
   };
 
-  const ProjectsSummary = (
-    <Container sx={{ minHeight: "80vh" }}>
-      <Searchbar onDebouncedChange={setNameFilter} />
-      <TagSearch tags={tags} onChangeSelected={tagFilters} />
-      <SearchResultsContainer data={data} />
-    </Container>
+  return (
+    <section>
+      <Container sx={{ minHeight: "80vh" }}>
+        <Searchbar onDebouncedChange={setNameFilter} />
+        <TagSearch tags={tags} onChangeSelected={tagFilters} />
+        <SearchResultsContainer data={data} />
+      </Container>
+    </section>
   );
-
-  return <section>{name ? <Outlet /> : ProjectsSummary}</section>;
 }
