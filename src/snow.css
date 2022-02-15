@@ -1,9 +1,9 @@
 :root {
   --spread: 2px;
   --blur: 4px;
-  --animation-time-1: 150s;
-  --animation-time-2: 200s;
-  --animation-time-3: 300s;
+  --animation-time-1: 100s;
+  --animation-time-2: 150s;
+  --animation-time-3: 200s;
 }
 
 #snow {

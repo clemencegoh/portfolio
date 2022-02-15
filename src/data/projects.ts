@@ -26,7 +26,7 @@ export const projectsData: projectData[] = [
     teaserSrc: "invento_preview.jpg",
     previewSrc: "invento_preview.jpg",
     otherSrc: [],
-    tags: ["flutter", "android", "mobile"],
+    tags: ["flutter", "android", "mobile", "flutter"],
     link: "https://drive.google.com/drive/folders/1jzt3V-25clzJxqFInngAlKl9sOM0YLxy?usp=sharing",
   },
   {
@@ -37,7 +37,7 @@ export const projectsData: projectData[] = [
       "Created using vanilla html/css/js as part of an attempt to use reactJS with vanilla web stack, mostly as a POC so there's not much styling involved.",
     completionDate: "2020",
     teaserSrc: "minesweeper_preview.jpg",
-    previewSrc: "minesweeper_preview.jpg",
+    previewSrc: "minesweeper-game.gif",
     otherSrc: [],
     tags: ["games", "web"],
     link: "https://clemencegoh.github.io/games/minesweeper",
@@ -71,47 +71,63 @@ export const projectsData: projectData[] = [
     tags: ["hardware", "games", "lucid"],
     link: "https://github.com/clemencegoh/MojoLucidWAM",
   },
+  {
+    name: "Security CTF (internal)",
+    innerName: "security-ctf-internal",
+    shortDescription:
+      "CTF game designed as part of the final project of the module",
+    description:
+      "Capture the Flag game making use of various techniques to hide a protected hardcoded " +
+      "'flag'. The software or website is then released to the other students in the course " +
+      "as part of the final project of the module which determined our grades.",
+    completionDate: "2019",
+    teaserSrc: "ctf_example.gif",
+    previewSrc: "ctf_example.gif",
+    otherSrc: [],
+    tags: ["security", "web", "python", "databases", "cryptography"],
+    link: "https://github.com/clemencegoh/Security_CTF",
+  },
+  {
+    name: "Image Captioning",
+    innerName: "image-captioning-deep-learning",
+    shortDescription: "Image captioning software with deep learning from SUTD",
+    description:
+      "Software to caption images using neural networks, using models which were trained" +
+      "from scratch over a period of 3 days using AWS EC2 instances optimized for GPU tasks.",
+    completionDate: "2019",
+    teaserSrc: "DL_Caption_Example.gif",
+    previewSrc: "DL_Caption_Example.gif",
+    otherSrc: [],
+    tags: ["Artificial Intelligence"],
+    link: "https://github.com/clemencegoh/DL_Image_Captioning",
+  },
+  {
+    name: "2D Action platformer game",
+    innerName: "2d-action-platformer-game",
+    shortDescription: "Software game made using unity",
+    description:
+      "2D platformer game made as part of final submission for Game Design course in SUTD." +
+      "All art and music done in-house, and coded in C# for Unity." +
+      "This game was later chosen to be the featured project for the course.",
+    completionDate: "2019",
+    teaserSrc: "sample_Gameplay.gif",
+    previewSrc: "sample_Gameplay.gif",
+    otherSrc: [],
+    tags: ["games", "Unity"],
+    link: "https://drive.google.com/drive/u/0/folders/1y8E12kAWRMXpOm59eSQAPltR89zmHVU9",
+  },
+  {
+    name: "Flutter QR Code scanner",
+    innerName: "flutter-qr-code-scanner",
+    shortDescription: "QR Code scanner created using flutter",
+    description:
+      "Experimental app made using flutter as part of my attempt at learning flutter," +
+      "which was still in beta at this point.",
+    completionDate: "2020",
+    teaserSrc: "flutter_simple_demo.gif",
+    previewSrc: "flutter_simple_demo.gif",
+    otherSrc: [],
+    tags: ["mobile", "flutter"],
+    link: "https://github.com/clemencegoh/Flutter_Wrapper",
+  },
 ];
-
-// export const projectsData: projectData[] = [
-//   {
-//     description: "Whack-a-mole game for mojo FPGA",
-//     tags: ["school", "software"],
-//     link: "https://github.com/clemencegoh/MojoLucidWAM",
-//     src: "/img/coding_no_preview.jpg",
-//     name: "Lucid Mojo Project",
-//     innerName: "whack-a-mole-mojo",
-//   },
-//   {
-//     description: "Security Capture The Flag",
-//     tags: ["school", "website"],
-//     link: "https://github.com/clemencegoh/Security_CTF",
-//     src: "/img/ctf_example.gif",
-//     name: "Security CTF Project from SUTD",
-//     innerName: "sutd-ctf",
-//   },
-//   {
-//     description: "Deep Learning Image Captioning",
-//     tags: ["school", "software"],
-//     link: "https://github.com/clemencegoh/DL_Image_Captioning",
-//     src: "/img/DL_Caption_Example.gif",
-//     name: "Image Captioning deep learning project in SUTD",
-//     innerName: "sutd-image-captioning",
-//   },
-//   {
-//     description: "2D Action Platformer Game",
-//     tags: ["school"],
-//     link: "https://drive.google.com/drive/u/0/folders/1y8E12kAWRMXpOm59eSQAPltR89zmHVU9",
-//     src: "/img/Sample_Gameplay.gif",
-//     name: "Game Design project from SUTD, featured project",
-//     innerName: "sutd-action-platformer-game",
-//   },
-//   {
-//     description: "Flutter QR Code scanner",
-//     tags: ["software"],
-//     link: "https://github.com/clemencegoh/Flutter_Wrapper",
-//     src: "/img/flutter_simple_demo.gif",
-//     name: "Meant to be a flutter app for experimenting, currently functioning as a QR code scanner",
-//     innerName: "flutter-qr-scanner",
-//   },
-// ];

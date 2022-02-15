@@ -1,7 +1,6 @@
 import { css } from "@emotion/css";
 import NavigateButton from "components/navigation/NavigateButton";
 import {
-  Avatar,
   Card,
   CardContent,
   Container,

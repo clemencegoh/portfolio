@@ -131,7 +131,7 @@ code {
 
 @keyframes animSnow {
   from {
-    transform: translateY(-8000px);
+    transform: translateY(-3000px);
   }
   to {
     transform: translateY(0);

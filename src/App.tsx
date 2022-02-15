@@ -45,12 +45,18 @@ function Wrapper() {
         <div id={"stars3"} className={restrict}></div>
       </div>
 
-      {theme === "theme-dark" && (
+      {theme === "theme-dark" ? (
         <img
           id="wandering-thoughts"
           alt="boy-wandering-thoughts"
           src={`${process.env.PUBLIC_URL}/images/boy-staring-up.png`}
         />
+      ) : (
+        <div
+          className={css`
+            height: 3rem;
+          `}
+        ></div>
       )}
       <Footer />
     </div>

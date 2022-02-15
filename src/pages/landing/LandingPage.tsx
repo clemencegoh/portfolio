@@ -18,7 +18,7 @@ export default function LandingPage() {
           display: flex;
           flex-flow: column;
           justify-content: center;
-          margin: 2rem 0;
+          margin: 2rem 0 8rem;
           text-align: center;
 
           @media screen and (max-width: 600px) {
@@ -41,6 +41,22 @@ export default function LandingPage() {
           Software engineer | Web developer
         </Typography>
       </section>
+
+      <section
+        id="quick-intro"
+        className={css`
+          display: flex;
+          flex-flow: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        `}
+        dangerouslySetInnerHTML={{
+          __html: `
+            <!-- Welcome to my space, where I try to show off stuff I've made during my stay on this Earth -->
+          `,
+        }}
+      ></section>
 
       <section id="getting-around">
         <NavigateButton
