@@ -110,8 +110,8 @@ export const projectsData: projectData[] = [
       "All art and music done in-house, and coded in C# for Unity." +
       "This game was later chosen to be the featured project for the course.",
     completionDate: "2019",
-    teaserSrc: "sample_Gameplay.gif",
-    previewSrc: "sample_Gameplay.gif",
+    teaserSrc: "Sample_Gameplay.gif",
+    previewSrc: "Sample_Gameplay.gif",
     otherSrc: [],
     tags: ["games", "Unity"],
     link: "https://drive.google.com/drive/u/0/folders/1y8E12kAWRMXpOm59eSQAPltR89zmHVU9",
