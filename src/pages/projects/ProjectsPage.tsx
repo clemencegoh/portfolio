@@ -1,4 +1,3 @@
-import { Outlet, useParams } from "react-router-dom";
 import { projectData, projectsData } from "data/projects";
 import Searchbar from "./Searchbar";
 import { useEffect, useState } from "react";
@@ -9,10 +8,7 @@ import SearchResultsContainer from "./SearchResultsContainer";
 import { isTruthy } from "helpers/truthy";
 import { containsAll } from "helpers/arrayOverlap";
 
-type Props = {};
-
-export default function ProjectsPage({}: Props) {
-  const { name } = useParams();
+export default function ProjectsPage() {
   const [data, setData] = useState<projectData[]>(projectsData);
 
   const [tagFilter, setTagFilter] = useState<string[]>([]);

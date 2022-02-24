@@ -9,9 +9,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import GridViewIcon from "@mui/icons-material/GridView";
 import { ThemedIconButton, ThemedLink } from "components/ThemedComponents";
 
-type Props = {};
-
-export default function ProjectDetailsPage({}: Props) {
+export default function ProjectDetailsPage() {
   const { name } = useParams();
   const dataIndex = projectsData.findIndex((item) => item.innerName === name);
   const data = dataIndex !== -1 ? projectsData[dataIndex] : null;
@@ -105,6 +103,8 @@ export default function ProjectDetailsPage({}: Props) {
           ${isMobileProject && "margin-top: 2rem;"}
 
           @media screen and (max-width: 600px) {
+            grid-template-columns: 1fr;
+            margin-bottom: 2rem;
           }
         `}
       >
